@@ -1,6 +1,17 @@
 -- internationalization boilerplate
+-- internationalization boilerplate
 local MP = minetest.get_modpath(minetest.get_current_modname())
 local S, NS = dofile(MP.."/intllib.lua")
+
+if(minetest.get_modpath("intllib")) then
+    S = dofile(modpath .."/intllib.lua")
+    print("[MOD] " .. MP .. ": translating in intllib-mode.")
+
+else
+    S = minetest.get_translator("commoditymarket")
+    print("[MOD] " .. MP .. ": translating in minetest-mode.")
+
+end -- if(minetest.get_modpath(
 
 commoditymarket.registered_markets = {}
 local log_length_limit = 30
