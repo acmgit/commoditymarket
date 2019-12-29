@@ -375,7 +375,7 @@ minetest.register_node("commoditymarket:caravan_post", {
 		local is_suitable_space = is_suitable_caravan_space(target, facedir)
 			
 		if not is_suitable_space then
-			meta:set_string("infotext", S("Indicated parking area isn't suitable.\nA 5x3 open space with solid ground\nis required for a caravan."))
+			meta:set_string("infotext", S("Indicated parking area isn't suitable.") .. "\n" .. S("A 5x3 open space with solid ground") .. "\n" .. S("is required for a caravan."))
 			meta:set_float("wait_time", 0)
 			local timer = minetest.get_node_timer(pos)
 			timer:start(1.0)
@@ -385,7 +385,7 @@ minetest.register_node("commoditymarket:caravan_post", {
 		local wait_time = (meta:get_float("wait_time") or 0) + elapsed
 		meta:set_float("wait_time", wait_time)
 		if wait_time < time_until_caravan then
-			meta:set_string("infotext", S("Caravan summoned\nETA: @1 seconds.", math.floor(time_until_caravan - wait_time)))
+			meta:set_string("infotext", S("Caravan summoned") .. "\nETA: ".. math.floor(time_until_caravan - wait_time) .. " " .. S("seconds."))
 			local timer = minetest.get_node_timer(pos)
 			timer:start(1.0)
 			return
