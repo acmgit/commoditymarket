@@ -117,14 +117,14 @@ local get_account_formspec = function(market, account)
 	end	
 	
 	formspec[#formspec+1] = "]container[1,4.5]list[detached:commoditymarket:" .. market.name .. ";add;0,0;1,1;]"
-		.."label[1,0;"..S("Drop items here to\nadd to your account").."]"
+		.."label[1,0;"..S("Drop items here to") .. "\n" .. S("add to your account").."]"
 		.."listring[current_player;main]listring[detached:commoditymarket:" .. market.name .. ";add]"
 		
 	if market_def.inventory_limit then
 		formspec[#formspec+1] = "label[3,0;"..S("Inventory limit:").."\n" .. inventory_count.."/" .. market_def.inventory_limit .. "]"
 			.. "tooltip[3,0;1.5,1;"..S("You can still receive purchased items if you've exceeded your inventory limit,\nbut you won't be able to transfer items from your personal inventory into\nthe market until you've emptied it back down below the limit again.").."]"
 	end
-	formspec[#formspec+1] = "label[4.9,0;Balance:\n" .. market_def.currency_symbol .. account.balance .. "]"
+	formspec[#formspec+1] = "label[4.9,0;" .. S("Balance:") .. "\n" .. market_def.currency_symbol .. account.balance .. "]"
 		.."field[6.1,0.325;1,1;withdrawamount;;]"
 		.."field_close_on_enter[withdrawamount;false]"
 		.."button[6.7,0;1.2,1;withdraw;"..S("Withdraw").."]"
@@ -356,7 +356,7 @@ local get_market_formspec = function(market, account)
 		-- Buy, sell, quantity and price button
 		formspec[#formspec+1] = "tooltip[0,0.25;3.75,1;"..S("Use these fields to enter buy and sell orders for the selected item.").."]"
 			.."button[0,0.55;1,1;buy;"..S("Buy").."]field[1.2,0.85;1,1;quantity;"..S("Quantity")..";]"
-			.."field[2.1,0.85;1,1;price;"..S("Price per")..";]button[2.7,0.55;1,1;sell;Sell]"
+			.."field[2.1,0.85;1,1;price;"..S("Price per")..";]button[2.7,0.55;1,1;sell;" .. S("Sell") .. "]"
 			.."field_close_on_enter[quantity;false]field_close_on_enter[price;false]"
 			.."container_end[]"
 		-- table of buy and sell orders
@@ -478,7 +478,7 @@ local get_info_formspec = function(market, account)
 	
 	local show_itemnames = account.show_itemnames or "false"
 
-	formspec[#formspec+1] = "]container[0.5, 7.5]label[0,0;Settings:]checkbox[0,0.25;show_itemnames;"..S("Show Itemnames")..";"
+	formspec[#formspec+1] = "]container[0.5, 7.5]label[0,0;" .. S("Settings:") .. "]checkbox[0,0.25;show_itemnames;"..S("Show Itemnames")..";"
 		..show_itemnames.."]container_end[]"
 	
 	return table.concat(formspec)

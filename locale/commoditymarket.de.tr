@@ -2,12 +2,12 @@
 Right-click on this to open the market interface.=Rechts-click hier um die Markteinstellungen zu öffnen.
 King's Market=Königlicher Markt
 At this time of day the King's Market is closed.=Zurzeit ist der Königliche Markt geschlossen.
-Night Market=Nachtmarkt.
+Night Market=Nachtmarkt
 At this time of day the Night Market is closed.=Zurzeit ist der Nachtmarkt geschlossen.
 Trader's Caravan=Handelskaravane
 Right-click to summon a trader's caravan=Rechts-click um die Karavane zu rufen.
 Trading Post=Handelspfosten.
-Goblin Exchange=Goblin Wechselstube
+Goblin Exchange=Kobold Wechselstube
 Undermarket=Untergrundmarkt
 Gold Coins=Goldmünzen
 Your Inventory=Dein Inventar
@@ -38,6 +38,7 @@ In inventory:=Im Inventar:
 Balance:=Bilanz
 Sell limit:=Verkaufseinschränkungen:
 Buy=Kauf
+Sell=Verkauf
 Price per=Preis pro
 Use these fields to enter buy and sell orders for the selected item.=Benutze diese Felder für Kauf- bzw. Verkaufsbestellungen der ausgewählten Ware.
 The price per item in this order.=Der Preis pro Stück in dieser Bestellung.
@@ -55,9 +56,9 @@ someone=irgendwer
 you=du
 Description:=Beschreibung:
 Your Recent Purchases and Sales:=Deine letzten Käufe und Verkäufe:
-Mark logs as read=Markiere log als gelesen.
+Mark logs as read=Log gelesen.
 No logged activites in this market yet.=Zur Zeit keine registrierten Aktivitäten in diesem Markt.
-Show Itemnames=Zeige Warennamen
+Show Itemnames=Zeige techn. Warennamen
 You can't sell items for a negative price.=Du kannst nicht mit einem negativem Preis verkaufen.
 You can't sell fewer than one item.=Du kannst nicht weniger als ein Stück pro Ware verkaufen.
 You can't pay less than nothing for an item.=Du kannst nicht weniger als nichts pro Ware bezahlen.
@@ -69,4 +70,22 @@ On day =Am
  sold = verkauft 
 to =an 
  at = für 
- each for a total of = zum Preis pro Stück für gesamt 
+ each for a total of = pro Stück für gesamt 
+Drop items here to=Hier hineinziehen
+add to your account=zum Hinzufügen
+Settings:=Einstellungen:
+#
+# --- Kings Market
+The largest and most accessible market for the common man, the King's Market uses gold coins as its medium of exchange (or the equivalent in gold ingots - 1000 coins to the ingot). However, as a respectable institution of the surface world, the King's Market operates only during the hours of daylight. The purchase and sale of swords and explosives is prohibited in the King's Market. Gold coins are represented by a '☼' symbol.=Der größte und meist besuchteste Markt für Jedermann, der Königliche Markt verwendet Goldmünzen als Währung zum wechseln (oder gleichermaßen in Goldbarren - 1000 Münzen sind ein Barren).Wie auch immer, als eingetragene Instituion auf der Oberfläche hat der Königliche Markt nur bei Tageslicht geöffnet. Der Kauf und Verkauf von Schwertern und Sprengstoffe ist im Königlichem Markt verboten. Goldmünzen werden als '☼' dargestellt. 
+#
+# --- Night Market
+When the sun sets and the stalls of the King's Market close, other vendors are just waking up to share their wares. The Night Market is not as voluminous as the King's Market but accepts a wider range of wares. It accepts the same gold coinage of the realm, one thousand coins to the gold ingot.=Wenn die Sonne untergeht und die Portale des Königlichen Marktes sich schließen, wachen andere Verkäufer auf um ihre Waren zu verteilen. Der Nachtmarkt ist nicht so groß wie der Königliche Markt aber erlaubt ein größeres Warensortiment. Er nimmt die gleichen Goldmünzen des Landes, ein tausend Goldmünzen sind ein Goldbarren.
+#
+# --- Traders Caravans
+Unlike most markets that have well-known fixed locations that travelers congregate to, the network of Trader's Caravans is fluid and dynamic in their locations. A Trader's Caravan can show up anywhere, make modest trades, and then be gone the next time you visit them. These caravans accept gold and gold coins as a currency (one gold ingot to one thousand gold coins exchange rate). Any reasonably-wealthy person can create a signpost marking a location where Trader's Caravans will make a stop.=Nicht wie andere Märkte, welche feste Standorte haben und Leute sie besuchen können, das Netzwerk der Handelskaravane ist flüssig und dynamischer in deren Standorte. Eine Handelskaravane kann überall auftauchen, bescheidene Geschäfte machen und geht wieder um es beim nächsten Mal wieder zu besuchen. Diese Karavanen nehmen Goldbarren und Goldmünzen als Währung (ein Goldbarren ist ein tausend Goldmünzen als Wechselkurs). Jede wohlhabendere Person kann einen Wegweiser erstellen, welcher einen Ort markiert, wo die Handelskaravane einen Halt machen wird.
+#
+# --- Goblin Exchange
+One does not usually associate Goblins with the sort of sophistication that running a market requires. Usually one just associates Goblins with savagery and violence. But they understand the principle of tit-for-tat exchange, and if approached correctly they actually respect the concepts of ownership and debt. However, for some peculiar reason they understand this concept in the context of coal lumps. Goblins deal in the standard coal lump as their form of currency, conceptually divided into 100 coal centilumps (though Goblin brokers prefer to 'keep the change' when giving back actual coal lumps).=Man assoziiert Kobolde normalerweise nicht mit der Art von Raffinesse, die das Betreiben eines Marktes erfordert. Für gewöhnlich assoziiert man Kobolde nur mit Grausamkeit und Gewalt. Aber sie verstehen das Prinzip des 'Wie du mir, so ich dir' Austausches, aber wenn sie richtig angegangen werden, respektieren sie tatsächlich die Begriffe 'Eigentum' und 'Schulden'. Kobolde handeln mit normalen Kohlebrocken als ihre Form der Währung, konzeptionell in 100 Kohleklumpen eingeteilt (obwohl Koboldhänlder es vorziehen, 'das Wechselgeld zu behalten', als tatsächliche Kohleklumpen zurückzugeben).
+#
+# --- Undermarket
+Deep in the bowels of the world, below even the goblin-infested warrens and ancient delvings of the dwarves, dark and mysterious beings once dwelled. A few still linger to this day, and facilitate barter for those brave souls willing to travel in their lost realms. The Undermarket uses Mese chips ('₥') as a currency - twenty chips to the Mese fragment. Though traders are loathe to physically break Mese crystals up into units that small, as it renders it useless for other purposes.=Tief in den Eingeweiden der Welt, selbst unter den von Kobolden verseuchten Kaninchen und den alten Schluchten der Zwerge, wohnten einst dunkle und geheimnisvolle Wesen. Einige wenige verweilen noch heute und erleichtern den Tauschhandel für jene tapferen Seelen, die bereit sind, in ihre verlorenen Reiche zu reisen. Der Undermarket verwendet Mese Chips ('₥') als Währung - zwanzig Chips für das Mese Fragment. Obwohl Händler es verabscheuen, Mese Kristalle physisch in so kleine Einheiten zu zerbrechen, da es sie für andere Zwecke unbrauchbar macht
