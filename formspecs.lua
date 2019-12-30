@@ -1,6 +1,17 @@
 -- internationalization boilerplate
+-- internationalization boilerplate
 local MP = minetest.get_modpath(minetest.get_current_modname())
 local S, NS = dofile(MP.."/intllib.lua")
+
+if(minetest.get_modpath("intllib")) then
+    S = dofile(modpath .."/intllib.lua")
+    print("[MOD] " .. MP .. ": translating in intllib-mode.")
+
+else
+    S = minetest.get_translator("commoditymarket")
+    print("[MOD] " .. MP .. ": translating in minetest-mode.")
+
+end -- if(minetest.get_modpath(
 
 local get_icon = function(item)
 	local def = minetest.registered_items[item]
@@ -436,9 +447,7 @@ local log_to_string = function(market, log_entry, account)
 		end
 	end
 
-	return colour .. S("On day @1 @2 sold @3 @4 to @5 at @6@7 each for a total of @6@8.",
-			math.ceil(log_entry.timestamp/86400), seller_name, log_entry.quantity, itemname,
-			purchaser_name, market.def.currency_symbol, log_entry.price, log_entry.quantity*log_entry.price), new
+	return colour .. S("On day ") .. math.ceil(log_entry.timestamp/86400) .. ": " .. seller_name .. S(" sold ") .. log_entry.quantity .. " " .. itemname .. " " .. S("to ") .. purchaser_name .. S(" at ") .. market.def.currency_symbol .. log_entry.price .. S(" each for a total of ") .. market.def.currency_symbol .. log_entry.quantity*log_entry.price .. ".", new
 end
 
 

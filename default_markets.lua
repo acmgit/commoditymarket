@@ -5,6 +5,16 @@ if not default_modpath then return end
 local MP = minetest.get_modpath(minetest.get_current_modname())
 local S, NS = dofile(MP.."/intllib.lua")
 
+if(minetest.get_modpath("intllib")) then
+    S = dofile(modpath .."/intllib.lua")
+    print("[MOD] " .. MP .. ": translating in intllib-mode.")
+
+else
+    S = minetest.get_translator("commoditymarket")
+    print("[MOD] " .. MP .. ": translating in minetest-mode.")
+
+end -- if(minetest.get_modpath(
+
 local gold_coins_required = false
 
 local default_items = {"default:axe_bronze","default:axe_diamond","default:axe_mese","default:axe_steel","default:axe_steel","default:axe_stone","default:axe_wood","default:pick_bronze","default:pick_diamond","default:pick_mese","default:pick_steel","default:pick_stone","default:pick_wood","default:shovel_bronze","default:shovel_diamond","default:shovel_mese","default:shovel_steel","default:shovel_stone","default:shovel_wood","default:sword_bronze","default:sword_diamond","default:sword_mese","default:sword_steel","default:sword_stone","default:sword_wood", "default:blueberries", "default:book", "default:bronze_ingot", "default:clay_brick", "default:clay_lump", "default:coal_lump", "default:copper_ingot", "default:copper_lump", "default:diamond", "default:flint", "default:gold_ingot", "default:gold_lump", "default:iron_lump", "default:mese_crystal", "default:mese_crystal_fragment", "default:obsidian_shard", "default:paper", "default:steel_ingot", "default:stick", "default:tin_ingot", "default:tin_lump", "default:acacia_tree", "default:acacia_wood", "default:apple", "default:aspen_tree", "default:aspen_wood", "default:blueberry_bush_sapling", "default:bookshelf", "default:brick", "default:bronzeblock", "default:bush_sapling", "default:cactus", "default:clay", "default:coalblock", "default:cobble", "default:copperblock", "default:desert_cobble", "default:desert_sand", "default:desert_sandstone", "default:desert_sandstone_block", "default:desert_sandstone_brick", "default:desert_stone", "default:desert_stone_block", "default:desert_stonebrick", "default:diamondblock", "default:dirt", "default:glass", "default:goldblock", "default:gravel", "default:ice", "default:junglegrass", "default:junglesapling", "default:jungletree", "default:junglewood", "default:ladder_steel", "default:ladder_wood", "default:large_cactus_seedling", "default:mese", "default:mese_post_light", "default:meselamp", "default:mossycobble", "default:obsidian", "default:obsidian_block", "default:obsidian_glass", "default:obsidianbrick", "default:papyrus", "default:pine_sapling", "default:pine_tree", "default:pine_wood", "default:sand", "default:sandstone", "default:sandstone_block", "default:sandstonebrick", "default:sapling", "default:silver_sand", "default:silver_sandstone", "default:silver_sandstone_block", "default:silver_sandstone_brick", "default:snow", "default:snowblock", "default:steelblock", "default:stone", "default:stone_block", "default:stonebrick", "default:tinblock", "default:tree", "default:wood",}
@@ -365,7 +375,7 @@ minetest.register_node("commoditymarket:caravan_post", {
 		local is_suitable_space = is_suitable_caravan_space(target, facedir)
 			
 		if not is_suitable_space then
-			meta:set_string("infotext", S("Indicated parking area isn't suitable.\nA 5x3 open space with solid ground\nis required for a caravan."))
+			meta:set_string("infotext", S("Indicated parking area isn't suitable.") .. "\n" .. S("A 5x3 open space with solid ground") .. "\n" .. S("is required for a caravan."))
 			meta:set_float("wait_time", 0)
 			local timer = minetest.get_node_timer(pos)
 			timer:start(1.0)
@@ -375,7 +385,7 @@ minetest.register_node("commoditymarket:caravan_post", {
 		local wait_time = (meta:get_float("wait_time") or 0) + elapsed
 		meta:set_float("wait_time", wait_time)
 		if wait_time < time_until_caravan then
-			meta:set_string("infotext", S("Caravan summoned\nETA: @1 seconds.", math.floor(time_until_caravan - wait_time)))
+			meta:set_string("infotext", S("Caravan summoned") .. "\nETA: ".. math.floor(time_until_caravan - wait_time) .. " " .. S("seconds."))
 			local timer = minetest.get_node_timer(pos)
 			timer:start(1.0)
 			return
