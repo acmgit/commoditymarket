@@ -77,7 +77,7 @@ end
 if minetest.settings:get_bool("commoditymarket_enable_night_market") then
 local night_def = {
 	description = S("Night Market"),
-	long_description = "When the sun sets and the stalls of the King's Market close, other vendors are just waking up to share their wares. The Night Market is not as voluminous as the King's Market but accepts a wider range of wares. It accepts the same gold coinage of the realm, one thousand coins to the gold ingot.",
+	long_description = S("When the sun sets and the stalls of the King's Market close, other vendors are just waking up to share their wares. The Night Market is not as voluminous as the King's Market but accepts a wider range of wares. It accepts the same gold coinage of the realm, one thousand coins to the gold ingot."),
 	currency = {
 		["default:gold_ingot"] = 1000,
 		["commoditymarket:gold_coins"] = 1
@@ -412,7 +412,7 @@ if minetest.settings:get_bool("commoditymarket_enable_goblin_market") then
 
 local goblin_def = {
 	description = S("Goblin Exchange"),
-	long_description = S("One does not usually associate Goblins with the sort of sophistication that running a market requires. Usually one just associates Goblins with savagery and violence. But they understand the principle of tit-for-tat exchange, and if approached correctly they actually respect the concepts of ownership and debt. However, for some peculiar reason they understand this concept in the context of coal lumps. Goblins deal in the standard coal lump as their form of currency, conceptually divided into 100 coal centilumps (though Goblin brokers prefer to \"keep the change\" when giving back actual coal lumps)."),
+	long_description = S("One does not usually associate Goblins with the sort of sophistication that running a market requires. Usually one just associates Goblins with savagery and violence. But they understand the principle of tit-for-tat exchange, and if approached correctly they actually respect the concepts of ownership and debt. However, for some peculiar reason they understand this concept in the context of coal lumps. Goblins deal in the standard coal lump as their form of currency, conceptually divided into 100 coal centilumps (though Goblin brokers prefer to 'keep the change' when giving back actual coal lumps)."),
 	currency = {
 		["default:coal_lump"] = 100
 	},
