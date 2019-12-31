@@ -96,7 +96,7 @@ local get_account_formspec = function(market, account)
 		formspec[#formspec+1] = ";text"
 	end
 	formspec[#formspec+1] = ";text;text,align=center]"
-		.."tooltip[inventory;"..S("All the items you've transfered to the market to sell and the items you've\npurchased with buy orders. Double-click on an item to bring it back into your\npersonal inventory.").."]"
+		.."tooltip[inventory;"..S("All the items you've transfered to the market to sell and the items you've") .. "\n" .. S("purchased with buy orders. Double-click on an item to bring it back into your") .. "\n" .. S("personal inventory.").."]"
 		.."table[0,0;9.75,4;inventory;0"
 	if show_itemnames then
 		formspec[#formspec+1] = ","..S("Item")
@@ -447,7 +447,9 @@ local log_to_string = function(market, log_entry, account)
 		end
 	end
 
-	return colour .. S("On day ") .. math.ceil(log_entry.timestamp/86400) .. ": " .. seller_name .. S(" sold ") .. log_entry.quantity .. " " .. itemname .. " " .. S("to ") .. purchaser_name .. S(" at ") .. market.def.currency_symbol .. log_entry.price .. S(" each for a total of ") .. market.def.currency_symbol .. log_entry.quantity*log_entry.price .. ".", new
+	return colour .. S("On day @1 @2 sold @3 @4 to @5 at @6@7 each for a total of @8@9.",
+			math.ceil(log_entry.timestamp/86400), seller_name, log_entry.quantity, itemname,
+			purchaser_name, market.def.currency_symbol, log_entry.price, market.def.currency_symbol, log_entry.quantity*log_entry.price), new
 end
 
 

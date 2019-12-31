@@ -12,6 +12,9 @@ Undermarket=
 Gold Coins=
 Your Inventory=
 Market Orders=
+All the items you've transfered to the market to sell and the items you've=
+purchased with buy orders. Double-click on an item to bring it back into your=
+personal inventory.=
 Item=
 Description=
 Quantity=
@@ -31,6 +34,7 @@ Sell Min=
 Last Price=
 Inventory=
 My orders=
+Select this to show only the markets where you have either a buy or a sell order pending.=
 Enter substring to search item identifiers for.=
 Apply search to outputs.=
 Clear search.=
@@ -54,7 +58,6 @@ Select an item to view or place orders.=
 yourself=
 someone=
 you=
-On day @1 @2 sold @3 @4 to @5 at @6@7 each for a total of @6@8.=
 Description:=
 Your Recent Purchases and Sales:=
 Mark logs as read=
@@ -67,11 +70,7 @@ You have to buy at least one item.=
 You can't afford that many of this item.=
 Caravan summoned\n=
 seconds.=
-On day =
- sold =
-to =
-at =
- each for a total of =
+On day @1 @2 sold @3 @4 to @5 at @6@7 each for a total of @8@9.=
 Drop items here to=
 add to your account=
 Settings:=
@@ -90,3 +89,5 @@ One does not usually associate Goblins with the sort of sophistication that runn
 #
 # --- Undermarket
 Deep in the bowels of the world, below even the goblin-infested warrens and ancient delvings of the dwarves, dark and mysterious beings once dwelled. A few still linger to this day, and facilitate barter for those brave souls willing to travel in their lost realms. The Undermarket uses Mese chips ('₥') as a currency - twenty chips to the Mese fragment. Though traders are loathe to physically break Mese crystals up into units that small, as it renders it useless for other purposes.=
+#
+A market where orders to buy or sell items can be placed and fulfilled.=Ein Markt, bei dem Aufträge zum Kauf oder Verkauf von Artikeln platziert und ausgeführt werden können.
