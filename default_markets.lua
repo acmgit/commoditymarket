@@ -49,6 +49,12 @@ gold_coins_required = true
 
 commoditymarket.register_market("kings", kings_def)
 
+local kings_protect = minetest.settings:get_bool("commoditymarket_protect_kings_market", true)
+local on_blast
+if kings_protect then
+	on_blast = function() end
+end
+
 minetest.register_node("commoditymarket:kings_market", {
 	description = kings_def.description,
 	_doc_items_longdesc = kings_def.long_description,
@@ -69,6 +75,10 @@ minetest.register_node("commoditymarket:kings_market", {
 			minetest.sound_play({name = "commoditymarket_error", gain = 0.1}, {to_player=clicker:get_player_name()})
 		end
 	end,
+	can_dig = function(pos, player)
+		return not kings_protect or minetest.check_player_privs(player, "protection_bypass")
+	end,
+	on_blast = on_blast,
 })
 end
 -------------------------------------------------------------------------------
@@ -93,6 +103,12 @@ gold_coins_required = true
 
 commoditymarket.register_market("night", night_def)
 
+local night_protect = minetest.settings:get_bool("commoditymarket_protect_night_market", true)
+local on_blast
+if night_protect then
+	on_blast = function() end
+end
+
 minetest.register_node("commoditymarket:night_market", {
 	description = night_def.description,
 	_doc_items_longdesc = night_def.long_description,
@@ -113,6 +129,10 @@ minetest.register_node("commoditymarket:night_market", {
 			minetest.sound_play({name = "commoditymarket_error", gain = 0.1}, {to_player=clicker:get_player_name()})
 		end
 	end,
+	can_dig = function(pos, player)
+		return not night_protect or minetest.check_player_privs(player, "protection_bypass")
+	end,
+	on_blast = on_blast,
 })
 end
 
@@ -256,6 +276,12 @@ tiles = {
 }
 }))
 
+local caravan_protect = minetest.settings:get_bool("commoditymarket_protect_caravan_market", true)
+local on_blast
+if caravan_protect then
+	on_blast = function() end
+end
+
 -- This one doesn't delete itself, server admins can place a permanent instance of it that way. Maybe inside towns next to bigger stationary markets.
 minetest.register_node("commoditymarket:caravan_market_permanent", {
 	description = caravan_def.description,
@@ -291,6 +317,10 @@ minetest.register_node("commoditymarket:caravan_market_permanent", {
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
 		commoditymarket.show_market("caravan", clicker:get_player_name())
 	end,
+	can_dig = function(pos, player)
+		return not caravan_protect or minetest.check_player_privs(player, "protection_bypass")
+	end,
+	on_blast = on_blast,
 })
 
 -- is a 5x3 area centered around pos clear of obstruction and has usable ground?
@@ -423,6 +453,12 @@ local goblin_def = {
 
 commoditymarket.register_market("goblin", goblin_def)
 
+local goblin_protect = minetest.settings:get_bool("commoditymarket_protect_goblin_market", true)
+local on_blast
+if goblin_protect then
+	on_blast = function() end
+end
+
 minetest.register_node("commoditymarket:goblin_market", {
 	description = goblin_def.description,
 	_doc_items_longdesc = goblin_def.long_description,
@@ -437,6 +473,10 @@ minetest.register_node("commoditymarket:goblin_market", {
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
 		commoditymarket.show_market("goblin", clicker:get_player_name())	
 	end,
+	can_dig = function(pos, player)
+		return not goblin_protect or minetest.check_player_privs(player, "protection_bypass")
+	end,
+	on_blast = on_blast,
 })
 end
 --------------------------------------------------------------------------------
@@ -457,6 +497,12 @@ local undermarket_def = {
 
 commoditymarket.register_market("under", undermarket_def)
 
+local under_protect = minetest.settings:get_bool("commoditymarket_protect_under_market", true)
+local on_blast
+if under_protect then
+	on_blast = function() end
+end
+
 minetest.register_node("commoditymarket:under_market", {
 	description = undermarket_def.description,
 	_doc_items_longdesc = undermarket_def.long_description,
@@ -470,6 +516,10 @@ minetest.register_node("commoditymarket:under_market", {
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
 		commoditymarket.show_market("under", clicker:get_player_name())	
 	end,
+	can_dig = function(pos, player)
+		return not under_protect or minetest.check_player_privs(player, "protection_bypass")
+	end,
+	on_blast = on_blast,
 })
 end
 ------------------------------------------------------------------
